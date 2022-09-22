@@ -1,38 +1,41 @@
-.App {
-  text-align: center;
+*{
+  margin: 0;
+  padding: 0;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.game-area {
   color: white;
+  text-align: center;
+  background-image: url(./dice_bg2.jpg);
+  height: 100vh;
+  width: 100vw;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.Btn-throw ,.Btn-reset{
+  height: 50px;
+  width: 200px;
+  margin: 150px 25px 50px 25px;
+  border: none;
+  border-radius: 8px;
+}
+.dice-img img{
+  height: 250px;
+  width: 250px;
+}
+.player1{
+  float: left;
+margin-top: 180px;
+margin-left: 200px;
+}
+.player1 h1{
+  font-size: 170px;
+}
+.player2{
+  float: right;
+margin-top: 180px;
+margin-right: 200px;
+}
+.player2 h1{
+  font-size: 170px;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
