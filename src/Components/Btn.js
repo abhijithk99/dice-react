@@ -17,48 +17,40 @@ export default function Btn() {
     img6
     
 ];
+
   const [i , setI] = useState(1)
   const [dice , setIndex] = useState(0)
-  function incrementCount1(){
-    setIndex(Math.floor(Math.random() * img_array.length))
+  const [currentScore1 , setCurrentscore1] = useState(0)
+  const [currentScore2 , setCurrentscore2] = useState(0)
+
+  const btnRoll = () => {
+    var diceFace = Math.floor(Math.random() * img_array.length);
+    setIndex(diceFace)
+
     if(i===1){
-      asd1();
+      setI(2)
+      return setCurrentscore1(currentScore1 + diceFace + 1);
     }
     else{
-      asd2();
-      
+      setI(1)
+      return setCurrentscore2(currentScore2 + diceFace + 1
+        );
     } 
+
   };
 
-  function reset(){
+  const resetBtn = () => {
+    setI(1)
     setIndex(0)
     setCurrentscore1(0)
     setCurrentscore2(0)
   };
 
-  const [currentScore1 , setCurrentscore1] = useState(dice)
-  function asd1(){
-    setCurrentscore1(currentScore1 + dice + 1)
-    if(currentScore1 >= 25){
-      alert("player 1 won")
-    }
-    setI(2)
-
-  };
-
-  const [currentScore2 , setCurrentscore2] = useState(dice)
-  function asd2(){
-    setCurrentscore2(currentScore2 + dice + 1)
-    if(currentScore2 >= 25){
-      alert("player 2 won")
-    }
-    setI(1)
-  };
-  
   return (
     <>
-    <button className='Btn-throw' onClick={() =>{incrementCount1()}}>Throw dice</button>
-    <button className='Btn-reset' onClick={() =>{reset()}}>Reset</button>
+
+    <button className='Btn-throw' onClick={btnRoll}>Throw dice</button>
+    <button className='Btn-reset' onClick={resetBtn}>Reset</button>
 
     <div className='player1'><h3>PLAYER 1</h3>
     <h1 className='score1'>{currentScore1}</h1>
@@ -70,6 +62,7 @@ export default function Btn() {
 
     <div className='dice-img'>
     <img src={img_array[dice]}/>
+    <div id="winner1">{currentScore1 >= 25?(<h3>PLAYER 1 WON</h3>) : currentScore2 >= 25 ?(<h3>PLAYER 2 WON</h3>):null}</div>
     </div>
 
     </>

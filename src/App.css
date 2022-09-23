@@ -28,7 +28,7 @@ margin-top: 180px;
 margin-left: 200px;
 }
 .player1 h1{
-  font-size: 170px;
+  font-size: 120px;
 }
 .player2{
   float: right;
@@ -36,6 +36,9 @@ margin-top: 180px;
 margin-right: 200px;
 }
 .player2 h1{
-  font-size: 170px;
+  font-size: 120px;
+}
+.result{
+  margin-top: 150px;
 }
 
